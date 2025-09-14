@@ -1,0 +1,162 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #900;
+    animation: slideDown 0.6s ease-out;
+}
+
+header h1 {
+    color: #e00;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 5px #900;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #e00;
+    transition: width 0.3s;
+    width: 0;
+    margin-top: 5px;
+}
+
+nav a:hover {
+    color: #e00;
+    transform: scale(1.1);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 20px;
+    transition: background 1s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+.section:nth-of-type(1) { animation-delay: 0.2s; }
+.section:nth-of-type(2) { animation-delay: 0.4s; }
+.section:nth-of-type(3) { animation-delay: 0.6s; }
+.section:nth-of-type(4) { animation-delay: 0.8s; }
+
+.section h2 {
+    font-size: 2.5rem;
+    color: #e00;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px #900;
+}
+
+.section p {
+    max-width: 600px;
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1.1rem;
+    animation: fadeIn 1.5s forwards;
+}
+
+.feminism {
+    background: linear-gradient(135deg, #111 0%, #330000 100%);
+}
+
+.homosexuality {
+    background: linear-gradient(135deg, #1a0000 0%, #4d0000 100%);
+}
+
+.transgenderism {
+    background: linear-gradient(135deg, #330000 0%, #660000 100%);
+}
+
+.pedophilia {
+    background: linear-gradient(135deg, #4d0000 0%, #990000 100%);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #900;
+    font-size: 0.9rem;
+    color: #777;
+    background-color: #111;
+    animation: slideUp 0.6s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
