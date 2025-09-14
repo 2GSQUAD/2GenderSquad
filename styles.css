@@ -35,7 +35,7 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 10px;
     font-size: 1.2rem;
     transition: color 0.3s, transform 0.3s;
     position: relative;
@@ -49,3 +49,78 @@ nav a::after {
     transition: width 0.3s;
     width: 0;
     margin-top: 5px;
+}
+
+nav a:hover {
+    color: #e00;
+    transform: scale(1.1);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 20px;
+    transition: background 1s ease;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: #e00;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px #900;
+}
+
+.section p {
+    max-width: 600px;
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.feminism {
+    background: linear-gradient(135deg, #111 0%, #330000 100%);
+}
+
+.homosexuality {
+    background: linear-gradient(135deg, #1a0000 0%, #4d0000 100%);
+}
+
+.transgenderism {
+    background: linear-gradient(135deg, #330000 0%, #660000 100%);
+}
+
+.copypasta {
+    background: linear-gradient(135deg, #660000 0%, #990000 100%);
+    cursor: pointer;
+}
+
+.copypasta h2 {
+    transition: color 0.3s ease;
+}
+
+.copypasta:hover h2 {
+    color: #fff;
+}
+
+.hidden-content {
+    max-width: 600px;
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.
