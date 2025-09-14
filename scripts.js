@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Animate sections into view
     const sections = document.querySelectorAll('.section');
-    const observerOptions = {
-        threshold: 0.1
-    };
-
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if(entry.isIntersecting){
@@ -12,13 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
 
-    // Smooth animation for nav clicks
+    // Smooth scroll for nav links
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -26,5 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(link.getAttribute('href'));
             target.scrollIntoView({ behavior: 'smooth' });
         });
+    });
+
+    // Toggle copypasta1 content
+    const copypastaTitle = document.querySelector('.copypasta1 .copypasta-title');
+    const hiddenContent = document.querySelector('.copypasta1 .hidden-content');
+
+    copypastaTitle.addEventListener('click', () => {
+        hiddenContent.classList.toggle('show');
     });
 });
